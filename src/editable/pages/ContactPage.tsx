@@ -9,8 +9,8 @@ import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 
 const tone = {
   shell: 'bg-[var(--slot4-page-bg)] text-[var(--slot4-page-text)]',
-  panel: 'border border-[var(--editable-border)] bg-[var(--slot4-surface-bg)]',
-  soft: 'border border-[var(--editable-border)] bg-[var(--slot4-panel-bg)]',
+  panel: 'editable-dark-panel',
+  soft: 'border border-[var(--editable-border)] bg-white/5 backdrop-blur-sm',
   muted: 'text-[var(--slot4-muted-text)]',
   action: 'bg-[var(--slot4-accent-fill)] text-[var(--slot4-on-accent)] hover:opacity-90',
 }
@@ -59,7 +59,7 @@ export default function ContactPage() {
             <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>{pagesContent.contact.description}</p>
             <div className="mt-8 space-y-4">
               {lanes.map((lane) => (
-                <div key={lane.title} className={`rounded-sm p-5 ${tone.soft}`}>
+                <div key={lane.title} className={`rounded-[1.6rem] p-5 ${tone.soft}`}>
                   <lane.icon className="h-5 w-5 text-[var(--slot4-accent)]" />
                   <h2 className="editable-display mt-3 text-xl font-semibold">{lane.title}</h2>
                   <p className={`mt-2 text-sm leading-7 ${tone.muted}`}>{lane.body}</p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className={`rounded-sm p-7 ${tone.panel}`}>
+          <div className={`rounded-[2rem] p-7 ${tone.panel}`}>
             <h2 className="editable-display text-2xl font-semibold">{pagesContent.contact.formTitle}</h2>
             <EditableContactLeadForm />
           </div>
